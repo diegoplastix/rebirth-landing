@@ -1,0 +1,2236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebirth Wellness & Aesthetics - Johnson City's Premier Aesthetic Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #f7f3f0;
+            --gold: #ad8741;
+            --gold-logo: #c8a125;
+            --text-dark: #2c2420;
+            --faq-inactive: #464646;
+            --footer-bg: #0b0b0b;
+            --white: #ffffff;
+            --black: #0b0b0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        /* Navigation & Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--white);
+            height: 95px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 63px;
+            box-shadow: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-left {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .header-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            height: 68px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-text-rebirth {
+            font-family: 'Inter', sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--gold-logo);
+            text-transform: uppercase;
+            letter-spacing: 6.25px;
+            line-height: 27px;
+        }
+
+        .logo-text-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 8.5px;
+            font-weight: 700;
+            color: var(--gold-logo);
+            text-transform: uppercase;
+            letter-spacing: 1.61px;
+            line-height: 16px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.65px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:first-child {
+            color: var(--gold);
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-right a {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.65px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-right a:hover {
+            color: var(--gold);
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .btn-book-now {
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-book-now:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 929px;
+            display: flex;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            width: 50%;
+            background: url('Images/hero-marble-bg.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 63px;
+            position: relative;
+        }
+
+        .hero-right {
+            width: 50%;
+            position: relative;
+        }
+
+        .hero-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+            display: block;
+        }
+
+        .hero-content {
+            max-width: 555px;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 500;
+            line-height: 60px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .hero-heading .italic {
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .hero-body {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--white);
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--white);
+            padding: 20px 30px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+            padding: 20px 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        /* Our Approach Section */
+        .our-approach {
+            background: var(--bg-cream);
+            padding: 150px 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .approach-image-container {
+            position: relative;
+            height: 800px;
+        }
+
+        .approach-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .approach-watermark {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.08;
+            width: 400px;
+            height: 400px;
+            background-image: url('Images/rebirth_logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .approach-text h3 {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .approach-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 58px;
+            line-height: 58px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+
+        .approach-text p {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .btn-secondary {
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 20px 40px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            margin-top: 30px;
+            white-space: nowrap;
+            width: 277px;
+        }
+
+        .btn-secondary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Treatments Section */
+        .treatments {
+            background: url('Images/pink_rectangle.png') center/cover repeat;
+            padding: 120px 60px;
+            text-align: center;
+        }
+
+        .treatments-intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .treatments-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .treatments-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .treatments-description {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .gold-divider {
+            width: 282px;
+            height: 0.7px;
+            background: var(--gold);
+            margin: 0 auto 40px;
+        }
+
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .treatment-card {
+            height: 549px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .treatment-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .treatment-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .treatment-card:hover .treatment-card-overlay {
+            opacity: 1;
+        }
+
+        .treatment-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 50px;
+            font-weight: 700;
+            color: var(--white);
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .treatment-card:hover .treatment-title {
+            opacity: 0;
+        }
+
+        .treatment-hover-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.56px;
+            text-transform: uppercase;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            line-height: 16px;
+        }
+
+        /* Trust Section */
+        .trust {
+            background: var(--bg-cream);
+            padding: 150px 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-watermark {
+            position: absolute;
+            left: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.06;
+            width: 400px;
+            height: 400px;
+            background-image: url('Images/rebirth_logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .trust-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .trust-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .trust-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 58px;
+            line-height: 60px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .trust-text p {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .btn-trust {
+            background: var(--gold);
+            color: var(--white);
+            padding: 20px 30px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            width: 378px;
+            margin-top: 30px;
+        }
+
+        .btn-trust:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .trust-image-container {
+            position: relative;
+            height: 750px;
+            overflow: hidden;
+        }
+
+        .trust-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: url('Images/pink_rectangle.png') center/cover repeat;
+            padding: 120px 60px;
+            text-align: center;
+        }
+
+        .testimonials-intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .testimonials-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .testimonials-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.05;
+        }
+
+        .testimonials-carousel-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel-arrow-left,
+        .carousel-arrow-right {
+            flex-shrink: 0;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-dark);
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .carousel-arrow-left:hover,
+        .carousel-arrow-right:hover {
+            color: var(--gold);
+        }
+
+        .testimonial-carousel {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(50% - 15px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 50px;
+            border: 0.92px solid #C8A125;
+            background: #E8D5CC;
+            text-align: center;
+            min-height: auto;
+        }
+
+        .testimonial-quote {
+            font-size: 16px;
+            line-height: 30px;
+            color: var(--text-dark);
+            margin-bottom: 0;
+        }
+
+        .stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star {
+            width: 20px;
+            height: 19px;
+            fill: var(--gold);
+        }
+
+        .testimonial-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 23px;
+            font-weight: 500;
+            color: #2c2420;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-info {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .carousel-arrow {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #e8d5cc;
+            border: 1px solid var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            color: var(--text-dark);
+        }
+
+        .carousel-arrow:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 9px;
+            padding: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--gold);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Before & After Section */
+        .before-after {
+            background: var(--bg-cream);
+            padding: 120px 60px;
+            text-align: center;
+        }
+
+        .before-after-intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .before-after-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .before-after-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.05;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .comparison-container {
+            position: relative;
+            width: 418px;
+            height: 418px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .comparison-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comparison-divider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--white);
+            cursor: ew-resize;
+            z-index: 10;
+        }
+
+        .comparison-label {
+            position: absolute;
+            bottom: 20px;
+            background: var(--white);
+            color: var(--gold);
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            z-index: 5;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .label-before {
+            left: 20px;
+        }
+
+        .label-after {
+            right: 20px;
+        }
+
+        .comparison-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 34px;
+            height: 34px;
+            background: var(--white);
+            border-radius: 50%;
+            z-index: 15;
+            cursor: ew-resize;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CTA Header (inside contact section) */
+        .cta-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 58px;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta-body {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--white);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .btn-cta {
+            border: 1px solid var(--white);
+            background: transparent;
+            color: var(--white);
+            padding: 20px 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-cta:hover {
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        /* Contact Form Section */
+        .contact-image {
+            object-fit: contain;
+        }
+
+        .contact {
+            background: url('Images/form-marble-bg.png') center/cover repeat;
+            padding: 120px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .contact-header {
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 80px;
+            max-width: 800px;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .contact-image {
+            width: 85%;
+            height: auto;
+            object-fit: contain;
+            margin: auto;
+        }
+
+        .form-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2.38px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 58px;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+
+        .form-description {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--white);
+            padding: 15px 0;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input::placeholder,
+        .form-select::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-top-color: var(--gold);
+        }
+
+        .form-textarea {
+            grid-column: 1 / -1;
+            resize: vertical;
+            min-height: 100px;
+            border-bottom: 1px solid var(--white);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0 center;
+            background-size: 1.5em 1.5em;
+            padding-right: 2em;
+        }
+
+        .form-select option {
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        .btn-submit {
+            background: var(--gold);
+            color: var(--white);
+            padding: 20px 30px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.68px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            width: 282px;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--bg-cream);
+            padding: 150px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-watermark {
+            position: absolute;
+            left: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.06;
+            width: 400px;
+            height: 400px;
+            background-image: url('Images/rebirth_logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .faq-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 51px;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq-container {
+            max-width: 883px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq-item {
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            margin-bottom: 0;
+            overflow: hidden;
+        }
+
+        .faq-item:first-child {
+            border-top: none;
+        }
+
+        .faq-item:last-child {
+            border-bottom: 1px solid var(--gold);
+        
+            border-bottom: none;}
+
+        .faq-question {
+            padding: 25px 0;
+            font-size: 23px;
+            font-weight: 500;
+            color: var(--faq-inactive);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.46px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--gold);
+        }
+
+        .faq-question:hover {
+            color: var(--gold);
+        }
+
+        .faq-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 0 25px 0;
+        }
+
+        .faq-answer-text {
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: var(--white);
+            padding: 80px 60px;
+            border-top: 1px solid var(--gold);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 100px;
+            margin-bottom: 60px;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .newsletter-description {
+            font-size: 14px;
+            line-height: 22px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--gold);
+            padding: 12px 15px;
+            color: var(--white);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--gold);
+        }
+
+        .btn-subscribe {
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-subscribe:hover {
+            opacity: 0.9;
+        }
+
+        .privacy-text {
+            font-size: 12px;
+            line-height: 18px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-right {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-column-title {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-item {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.65px;
+            text-transform: uppercase;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+        }
+
+        .footer-item:hover {
+            color: var(--gold);
+        }
+
+        .footer-divider {
+            width: 1px;
+            height: 60px;
+            background: var(--gold);
+            margin: 0 20px;
+        }
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 8px;
+            fill: var(--white);
+            transition: fill 0.3s ease;
+            vertical-align: middle;
+        }
+
+        .footer-item:hover .social-icon {
+            fill: var(--gold);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--gold);
+            padding-top: 40px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .powered-by {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plastix-logo {
+            height: auto;
+            max-height: 16px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            header {
+                padding: 0 40px;
+            }
+
+            .header-center {
+                position: relative;
+                left: auto;
+                transform: none;
+            }
+
+            .header-left {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero-left {
+                width: 100%;
+                padding: 0 40px;
+                min-height: 600px;
+            }
+
+            .hero-right {
+                width: 100%;
+                height: 400px;
+            }
+
+            .our-approach {
+                grid-template-columns: 1fr;
+                padding: 80px 40px;
+                gap: 40px;
+            }
+
+            .treatments-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trust {
+                grid-template-columns: 1fr;
+                padding: 80px 40px;
+                gap: 40px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .contact {
+                padding: 80px 40px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-right {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+                height: 80px;
+            }
+
+            .header-center .logo {
+                height: 45px;
+            }
+
+            .logo-text-rebirth {
+                font-size: 18px;
+                letter-spacing: 3px;
+            }
+
+            .logo-text-sub {
+                font-size: 7px;
+            }
+
+            .hero-left {
+                min-height: 500px;
+                padding: 0 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .nav-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-right {
+                height: 350px;
+            }
+
+            .hero-heading {
+                font-size: 40px;
+                line-height: 40px;
+            }
+
+            .hero-body {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                width: 100%;
+            }
+
+            .treatments-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .treatment-card {
+                height: 400px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-container {
+                width: 100%;
+                height: 300px;
+            }
+
+            .our-approach,
+            .trust,
+            .contact,
+            .treatments,
+            .testimonials,
+            .before-after,
+            .cta-rebirth,
+            .faq {
+                padding: 60px 20px;
+            }
+
+            .approach-text h2,
+            .trust-heading,
+            .form-title,
+            .treatments-heading,
+            .testimonials-heading,
+            .before-after-heading {
+                font-size: 40px;
+                line-height: 45px;
+            }
+
+            .faq-title {
+                font-size: 36px;
+            }
+
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-right {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-heading {
+                font-size: 32px;
+                line-height: 32px;
+            }
+
+            .treatments-heading,
+            .before-after-heading,
+            .testimonials-heading {
+                font-size: 32px;
+            }
+
+            .treatment-card {
+                height: 300px;
+            }
+
+            .btn-primary,
+            .btn-outline,
+            .btn-secondary,
+            .btn-trust,
+            .btn-submit,
+            .btn-cta {
+                padding: 16px 20px;
+                font-size: 12px;
+            }
+
+            .btn-trust {
+                width: 100%;
+            }
+
+            .comparison-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header id="header">
+        <div class="header-left">
+            <nav>
+                <a href="#home">Home</a>
+                <!-- <a href="#services">Services</a> -->
+                <a href="#treatments">Treatments</a>
+                <!-- <a href="#shop">Shop</a> -->
+                <a href="#about">About Us</a>
+            </nav>
+        </div>
+        <div class="header-center">
+            <img src="Images/rebirth_logo.png" alt="Rebirth Wellness & Aesthetics" class="logo">
+        </div>
+        <div class="nav-right">
+            <!-- <a href="#blog">Blog</a> -->
+            <a href="#contact">Contact Us</a>
+            <button class="btn-book-now" onclick="scrollToSection('contact')">BOOK NOW</button>
+        </div>
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-left">
+            <div class="hero-content">
+                <p class="hero-label">Johnson City's Premier Aesthetic & Wellness Studio</p>
+                <h1 class="hero-heading">Where Precision Meets the<br><span class="italic">Art of Renewal.</span></h1>
+                <p class="hero-body">Rebirth Wellness & Aesthetics offers a curated suite of medical-grade treatments — delivered with clinical precision, refined artistry, and a deeply personal touch. This is aesthetic care elevated.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('contact')">SCHEDULE CONSULTATION</button>
+                    <button class="btn-outline" onclick="scrollToSection('treatments')">Explore Treatments</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="Images/hero-portrait.png" alt="Rebirth Wellness & Aesthetics">
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="our-approach" id="about">
+        <div class="approach-image-container">
+            <img src="Images/approach-image-complete.png" alt="Our Approach" class="approach-image">
+        </div>
+        <div class="approach-text">
+            <h3>OUR APPROACH</h3>
+            <h2>Subtle. Intentional. Yours.</h2>
+            <p>At Rebirth, we believe the most transformative results are the ones no one can quite place — only that you look rested, confident, and entirely like yourself.</p>
+            <p>Every treatment plan begins with a conversation. We study your anatomy, understand your goals, and design a protocol that works in harmony with your natural structure — never against it. Whether you're addressing early volume loss, skin laxity, texture concerns, or body composition, our clinical approach ensures results that are refined, believable, and built to last.</p>
+            <button class="btn-secondary" onclick="scrollToSection('contact')">LEARN MORE ABOUT US</button>
+        </div>
+        
+    </section>
+
+    <!-- Treatments Section -->
+    <section class="treatments" id="treatments">
+        <div class="treatments-intro">
+            <p class="treatments-label">What We Offer</p>
+            <h2 class="treatments-heading">Our Treatments</h2>
+            <p class="treatments-description">From neuromodulator precision to advanced skin resurfacing and body contouring — every service at Rebirth is selected for its clinical efficacy and elevated experience.</p>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="treatments-grid">
+            <!-- FACE Card -->
+            <div class="treatment-card" onclick="scrollToSection('contact')">
+                <img src="Images/face-model.png" alt="Face Treatments" class="treatment-card-image">
+                <div class="treatment-card-overlay">
+                    <div class="treatment-hover-content">
+                        <div>NEUROMODULATORS</div>
+                        <div>DERMAL FILLERS</div>
+                        <div>BIOSTIMULATORS</div>
+                        <div>SKIN TIGHTENING</div>
+                        <div>FACIAL CONTOURING</div>
+                    </div>
+                </div>
+                <h3 class="treatment-title">FACE</h3>
+            </div>
+
+            <!-- SKIN Card -->
+            <div class="treatment-card" onclick="scrollToSection('contact')">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-04-01/UUEvPuQigg.png" alt="Skin Treatments" class="treatment-card-image">
+                <div class="treatment-card-overlay">
+                    <div class="treatment-hover-content">
+                        <div>MEDICAL-GRADE FACIALS</div>
+                        <div>LASER RESURFACING</div>
+                        <div>CHEMICAL PEELS</div>
+                        <div>ACNE & PIGMENTATION PROTOCOLS</div>
+                        <div>MEDICAL-GRADE SKINCARE</div>
+                    </div>
+                </div>
+                <h3 class="treatment-title">SKIN</h3>
+            </div>
+
+            <!-- BODY Card -->
+            <div class="treatment-card" onclick="scrollToSection('contact')">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-04-01/YpksFsxxe8.png" alt="Body Treatments" class="treatment-card-image">
+                <div class="treatment-card-overlay">
+                    <div class="treatment-hover-content">
+                        <div>BODY CONTOURING</div>
+                        <div>FAT REDUCTION</div>
+                        <div>WEIGHT MANAGEMENT</div>
+                        <div>WELLNESS PROTOCOLS</div>
+                        <div>PEPTIDE THERAPY</div>
+                    </div>
+                </div>
+                <h3 class="treatment-title">BODY</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="trust-content">
+            <h3 class="trust-label">Why Our Clients Trust Rebirth</h3>
+            <h2 class="trust-heading">A Standard of Care You'll Feel the Difference In.</h2>
+            <div class="trust-text">
+                <p>Rebirth was built for the discerning client — the one who has done their research, knows what they want, and will not settle for anything less than expert-level results.</p>
+                <p>Our providers train continuously at the forefront of aesthetic medicine, ensuring every recommendation is rooted in current clinical evidence and refined technique. We invest in the technologies that consistently deliver — not the ones that simply trend.</p>
+                <p>But beyond credentials and equipment, what sets Rebirth apart is the relationship. You are not a chart number here. You are a person with a unique anatomy, a specific goal, and a story we take the time to understand. Every protocol is authored for you — and only you.</p>
+            </div>
+            <button class="btn-trust" onclick="scrollToSection('contact')">BOOK YOUR INITIAL CONSULTATION</button>
+        </div>
+        <div class="trust-image-container">
+            <img src="Images/trust-image-complete.png" alt="Trust" class="trust-image">
+        </div>
+        
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-intro">
+            <p class="testimonials-label">Client Experiences</p>
+            <h2 class="testimonials-heading">The Results Speak for Themselves.</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="testimonials-carousel-wrapper">
+            <button class="carousel-arrow carousel-arrow-left" onclick="previousTestimonial()">❮</button>
+            <div class="testimonial-carousel" id="testimonialCarousel">
+              <div class="testimonial-track" id="testimonialTrack">
+                <div class="testimonial-card" data-index="0">
+                    <p class="testimonial-quote">"I'd been to other places before and always left feeling like I'd had something done. At Rebirth, it was the opposite — I left looking like myself, just more rested. Holli took more time in my consultation than I expected, asked questions I hadn't been asked before, and was honest about what I actually needed versus what I thought I wanted. Three months later, people keep asking if I've been on vacation. That's exactly what I was hoping for."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Sarah M.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-index="1">
+                    <p class="testimonial-quote">"What sets Rebirth apart isn't just the results — it's the entire experience. The space is beautiful, the team is genuinely knowledgeable, and there's no pressure, no upselling, no rushing you through. Holli explained everything she was doing and why, which made me feel completely at ease. I've recommended her to four of my friends now. This is the standard I didn't know existed until I found it."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Jennifer L.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-index="2">
+                    <p class="testimonial-quote">"The attention to detail here is unmatched. From the moment I walked in, everything felt curated — the consultation, the treatment plan, the follow-up. I've never felt more confident in my skin."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Amanda R.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-index="3">
+                    <p class="testimonial-quote">"I was nervous about my first treatment, but the team at Rebirth made me feel completely at ease. The results exceeded my expectations, and I finally feel like the best version of myself."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Michelle T.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-index="4">
+                    <p class="testimonial-quote">"After years of trying different providers, I finally found my home at Rebirth. The expertise and genuine care here is something I haven't experienced anywhere else."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Danielle K.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-index="5">
+                    <p class="testimonial-quote">"I came in for a skin consultation not really knowing what to expect. Holli spent over an hour with me, mapping out a plan that addressed concerns I didn't even know how to articulate. Two treatments in and my skin has never looked this even or felt this healthy. I trust her completely."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Rachel W.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-index="6">
+                    <p class="testimonial-quote">"What I appreciate most about Rebirth is the honesty. Holli told me what I didn't need — which was half of what I came in asking for. That kind of integrity is rare. The results from what she did recommend have been absolutely beautiful and natural."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Vanessa H.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-index="7">
+                    <p class="testimonial-quote">"The space is gorgeous, the team is warm, and the results speak for themselves. I drove over an hour for my appointment and I would do it again without hesitation. Rebirth is worth every mile."</p>
+                    <div class="testimonial-info">
+                        <h3 class="testimonial-name">Lauren P.</h3>
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-arrow carousel-arrow-right" onclick="nextTestimonial()">❯</button>
+        </div>
+
+        <div class="carousel-dots">
+            <div class="dot active" onclick="goToTestimonial(0)"></div>
+            <div class="dot" onclick="goToTestimonial(1)"></div>
+            <div class="dot" onclick="goToTestimonial(2)"></div>
+            <div class="dot" onclick="goToTestimonial(3)"></div>
+        </div>
+
+    </section>
+
+    <!-- Before & After Section -->
+    <section class="before-after" id="before-after">
+        <div class="before-after-intro">
+            <p class="before-after-label">The Rebirth Difference</p>
+            <h2 class="before-after-heading">Artistry Informed by<br>Science</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-container">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-04-01/5tPKJJO6V9.png" alt="Before/After 1" class="comparison-before">
+                <div class="comparison-divider" style="left: 50%;"></div>
+                <div class="comparison-label label-before">BEFORE</div>
+                <div class="comparison-label label-after">AFTER</div>
+                <div class="comparison-handle"></div>
+            </div>
+
+            <div class="comparison-container">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-04-01/Bqxpgz8xCF.png" alt="Before/After 2" class="comparison-before">
+                <div class="comparison-divider" style="left: 50%;"></div>
+                <div class="comparison-label label-before">BEFORE</div>
+                <div class="comparison-label label-after">AFTER</div>
+                <div class="comparison-handle"></div>
+            </div>
+
+            <div class="comparison-container">
+                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-04-01/NqaK7t0imG.png" alt="Before/After 3" class="comparison-before">
+                <div class="comparison-divider" style="left: 50%;"></div>
+                <div class="comparison-label label-before">BEFORE</div>
+                <div class="comparison-label label-after">AFTER</div>
+                <div class="comparison-handle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Begin / Contact Form Section (unified) -->
+    <section class="contact" id="contact">
+        <div class="contact-header">
+            <p class="cta-label">Ready to Begin</p>
+            <h2 class="cta-heading">Your Rebirth Starts Here.</h2>
+            <p class="cta-body">Whether you're exploring aesthetic care for the first time or looking for a new level of expertise, we invite you to experience the Rebirth difference. Schedule your consultation today and take the first step toward a more confident, refreshed you.</p>
+            <button class="btn-cta" onclick="scrollToSection('contactForm')">SCHEDULE CONSULTATION</button>
+        </div>
+        <div class="contact-content">
+            <img src="Images/form-image-complete.png" alt="Contact" class="contact-image">
+            <div class="form-wrapper">
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="FIRST NAME" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="LAST NAME" required>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <input type="email" class="form-input" placeholder="EMAIL" required style="width: 100%;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <input type="tel" class="form-input" placeholder="PHONE" required style="width: 100%;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <select class="form-select" required style="width: 100%;">
+                        <option value="">TREATMENT OF INTEREST</option>
+                        <option value="face">Face</option>
+                        <option value="skin">Skin</option>
+                        <option value="body">Body</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <textarea class="form-textarea" placeholder="TYPE YOUR MESSAGE..." required style="width: 100%; border: 1px solid var(--white); min-height: 120px; padding: 15px;"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">SCHEDULE CONSULTATION</button>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item active">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is a consultation required before treatment?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Yes — and by design. Every client begins with a private consultation so we can assess your anatomy, discuss your goals, and recommend a protocol that is genuinely right for you. We do not treat without understanding you first.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Are treatments customized for each individual?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Absolutely. Every face, every body, every set of goals is unique. We customize each treatment plan based on your anatomy, aesthetic preferences, and desired outcomes. There is no one-size-fits-all approach at Rebirth.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How long do appointments typically take?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Consultations typically take 45-60 minutes. Treatment appointments vary depending on the service—this will be discussed during your consultation and confirmed when scheduling.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is there downtime after treatments?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">Downtime varies by treatment. Some procedures have minimal to no downtime, while others may involve mild swelling or redness. We'll provide detailed aftercare instructions and realistic expectations during your consultation and after your treatment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you offer telehealth or virtual consultations?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">We primarily conduct in-person consultations so we can properly assess your anatomy and facial structure. However, we're happy to discuss your goals via phone or video initially—just let us know!</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-left">
+                <img src="Images/rebirth_logo.png" alt="Rebirth Wellness & Aesthetics" class="footer-logo">
+                <p class="newsletter-description">Stay updated with our latest treatments, special offers, and wellness tips delivered straight to your inbox.</p>
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="YOUR EMAIL" required>
+                    <button class="btn-subscribe" type="button">SUBSCRIBE</button>
+                </div>
+                <p class="privacy-text">We respect your privacy. Unsubscribe at any time. Read our Privacy Policy.</p>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Contact</h3>
+                    <a href="tel:+14239007273" class="footer-item">(423) 900-7273</a>
+                    <div style="width: 100%; max-width: 200px; height: 1px; background: var(--gold); margin: 10px 0;"></div>
+                    <a href="mailto:support@rebirthjc.com" class="footer-item">support@rebirthjc.com</a>
+                    <div style="width: 100%; max-width: 200px; height: 1px; background: var(--gold); margin: 10px 0;"></div>
+                    <span class="footer-item">2053 Hamilton Pl<br>Johnson City, TN</span>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Explore</h3>
+                    <a href="#treatments" class="footer-item">Services</a>
+                    <a href="#about" class="footer-item">About Us</a>
+                    <a href="#blog" class="footer-item">Blog</a>
+                    <a href="#specials" class="footer-item">Specials</a>
+                    <a href="#before-after" class="footer-item">Before & After</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Support</h3>
+                    <a href="#contact" class="footer-item">Contact Us</a>
+                    <a href="#financing" class="footer-item">Financing</a>
+                    <a href="#accessibility" class="footer-item">Accessibility</a>
+                    <a href="#faq" class="footer-item">FAQs</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Follow Us</h3>
+                    <a href="#facebook" class="footer-item">
+                        <svg class="social-icon" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        FACEBOOK
+                    </a>
+                    <a href="#instagram" class="footer-item">
+                        <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        INSTAGRAM
+                    </a>
+                    <a href="#twitter" class="footer-item">
+                        <svg class="social-icon" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        X
+                    </a>
+                    <a href="#youtube" class="footer-item">
+                        <svg class="social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136c.502-1.884.502-5.814.502-5.814s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        YOUTUBE
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 REBIRTH WELLNESS & AESTHETICS</span>
+            <div class="powered-by">
+                <img src="Images/footer-plastix-logo.png" alt="Plastix" class="plastix-logo">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const headerLeft = document.querySelector('.header-left');
+            const navRight = document.querySelector('.nav-right');
+            if (headerLeft.style.display === 'flex') {
+                headerLeft.style.display = 'none';
+                navRight.style.display = 'none';
+            } else {
+                headerLeft.style.display = 'flex';
+                headerLeft.style.flexDirection = 'column';
+                headerLeft.style.position = 'absolute';
+                headerLeft.style.top = '95px';
+                headerLeft.style.left = '0';
+                headerLeft.style.right = '0';
+                headerLeft.style.background = '#fff';
+                headerLeft.style.padding = '20px';
+                headerLeft.style.zIndex = '999';
+                navRight.style.display = 'flex';
+                navRight.style.flexDirection = 'column';
+                navRight.style.position = 'absolute';
+                navRight.style.top = '250px';
+                navRight.style.left = '0';
+                navRight.style.right = '0';
+                navRight.style.background = '#fff';
+                navRight.style.padding = '20px';
+                navRight.style.zIndex = '999';
+            }
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Testimonial carousel
+        let currentPage = 0;
+        const totalPages = 4; // 8 cards, 2 per page
+
+        function showTestimonial(pageIndex) {
+            const track = document.getElementById('testimonialTrack');
+            const carousel = document.getElementById('testimonialCarousel');
+            const carouselWidth = carousel.offsetWidth;
+            const gap = 30;
+            // Each page scrolls by the full carousel width + gap
+            const offset = pageIndex * (carouselWidth + gap);
+            track.style.transform = 'translateX(-' + offset + 'px)';
+
+            document.querySelectorAll('.dot').forEach(function(dot, i) {
+                dot.classList.toggle('active', i === pageIndex);
+            });
+        }
+
+        function nextTestimonial() {
+            currentPage = (currentPage + 1) % totalPages;
+            showTestimonial(currentPage);
+        }
+
+        function previousTestimonial() {
+            currentPage = (currentPage - 1 + totalPages) % totalPages;
+            showTestimonial(currentPage);
+        }
+
+        function goToTestimonial(index) {
+            currentPage = index;
+            showTestimonial(currentPage);
+        }
+
+        // Recalculate on resize
+        window.addEventListener('resize', function() {
+            showTestimonial(currentPage);
+        });
+
+        // Before/After image slider
+        document.querySelectorAll('.comparison-container').forEach(container => {
+            const divider = container.querySelector('.comparison-divider');
+            const handle = container.querySelector('.comparison-handle');
+            let isActive = false;
+
+            const startDrag = (e) => {
+                isActive = true;
+                moveDivider(e);
+            };
+
+            const moveDivider = (e) => {
+                if (!isActive) return;
+                const rect = container.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                if (e.touches) {
+                    x = e.touches[0].clientX - rect.left;
+                }
+                x = Math.max(0, Math.min(x, rect.width));
+                divider.style.left = `${(x / rect.width) * 100}%`;
+                handle.style.left = `calc(${(x / rect.width) * 100}% - 17px)`;
+            };
+
+            const stopDrag = () => {
+                isActive = false;
+            };
+
+            handle.addEventListener('mousedown', startDrag);
+            divider.addEventListener('mousedown', startDrag);
+            handle.addEventListener('touchstart', startDrag);
+            divider.addEventListener('touchstart', startDrag);
+
+            document.addEventListener('mousemove', moveDivider);
+            document.addEventListener('touchmove', moveDivider);
+            document.addEventListener('mouseup', stopDrag);
+            document.addEventListener('touchend', stopDrag);
+        });
+
+        // FAQ Accordion
+        function toggleFaq(element) {
+            const faqItem = element.closest('.faq-item');
+            const isActive = faqItem.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your submission! Our team will contact you soon to confirm your consultation appointment.');
+            document.getElementById('contactForm').reset();
+        }
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('fade-in');
+                    void entry.target.offsetWidth;
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
