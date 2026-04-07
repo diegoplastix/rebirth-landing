@@ -1395,6 +1395,10 @@
                 gap: 40px;
             }
 
+            .approach-image-container {
+                height: 500px;
+            }
+
             .treatments-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1405,13 +1409,25 @@
                 gap: 40px;
             }
 
+            .trust-image-container {
+                height: 500px;
+            }
+
             .comparison-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
 
+            .comparison-container {
+                width: 100%;
+            }
+
             .contact {
                 padding: 80px 40px;
+            }
+
+            .contact-header {
+                margin-bottom: 50px;
             }
 
             .contact-content {
@@ -1448,8 +1464,8 @@
             }
 
             .hero-left {
-                min-height: 500px;
-                padding: 0 20px;
+                min-height: 550px;
+                padding: 40px 20px;
             }
 
             nav {
@@ -1491,12 +1507,28 @@
                 width: 100%;
             }
 
+            .btn-secondary {
+                width: 100%;
+            }
+
+            .btn-submit {
+                width: 100%;
+            }
+
             .treatments-grid {
                 grid-template-columns: 1fr;
             }
 
             .treatment-card {
                 height: 400px;
+            }
+
+            .approach-image-container {
+                height: 350px;
+            }
+
+            .trust-image-container {
+                height: 350px;
             }
 
             .comparison-grid {
@@ -1514,7 +1546,6 @@
             .treatments,
             .testimonials,
             .before-after,
-            .cta-rebirth,
             .faq {
                 padding: 60px 20px;
             }
@@ -1529,12 +1560,48 @@
                 line-height: 45px;
             }
 
+            .cta-heading {
+                font-size: 40px;
+                line-height: 45px;
+            }
+
+            .cta-body {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .contact-header {
+                margin-bottom: 40px;
+            }
+
+            .contact-image {
+                width: 100%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
             .faq-title {
                 font-size: 36px;
             }
 
+            .faq-question {
+                font-size: 18px;
+            }
+
             .testimonial-card {
                 flex: 0 0 100%;
+            }
+
+            .testimonials-carousel-wrapper {
+                gap: 10px;
+            }
+
+            .carousel-arrow-left,
+            .carousel-arrow-right {
+                font-size: 18px;
+                padding: 5px;
             }
 
             .footer-top {
@@ -1553,19 +1620,47 @@
         }
 
         @media (max-width: 480px) {
+            .hero-left {
+                min-height: 520px;
+                padding: 40px 16px;
+            }
+
             .hero-heading {
                 font-size: 32px;
                 line-height: 32px;
+            }
+
+            .hero-label {
+                font-size: 12px;
+                letter-spacing: 1.5px;
             }
 
             .treatments-heading,
             .before-after-heading,
             .testimonials-heading {
                 font-size: 32px;
+                line-height: 36px;
+            }
+
+            .cta-heading {
+                font-size: 32px;
+                line-height: 36px;
             }
 
             .treatment-card {
                 height: 300px;
+            }
+
+            .treatment-title {
+                font-size: 36px;
+            }
+
+            .approach-image-container {
+                height: 280px;
+            }
+
+            .trust-image-container {
+                height: 280px;
             }
 
             .btn-primary,
@@ -1576,14 +1671,68 @@
             .btn-cta {
                 padding: 16px 20px;
                 font-size: 12px;
-            }
-
-            .btn-trust {
                 width: 100%;
             }
 
             .comparison-container {
                 height: 250px;
+            }
+
+            .our-approach,
+            .trust,
+            .contact,
+            .treatments,
+            .testimonials,
+            .before-after,
+            .faq {
+                padding: 40px 16px;
+            }
+
+            .contact-header {
+                margin-bottom: 30px;
+            }
+
+            .testimonial-card {
+                padding: 25px 20px;
+            }
+
+            .testimonial-quote {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .testimonial-name {
+                font-size: 20px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+                padding: 20px 0;
+            }
+
+            .faq-answer-text {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .approach-text h2,
+            .trust-heading {
+                font-size: 32px;
+                line-height: 36px;
+            }
+
+            .approach-text p,
+            .trust-text p {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .footer-column-title {
+                font-size: 14px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
             }
         }
     </style>
@@ -1856,6 +2005,10 @@
             <div class="dot" onclick="goToTestimonial(1)"></div>
             <div class="dot" onclick="goToTestimonial(2)"></div>
             <div class="dot" onclick="goToTestimonial(3)"></div>
+            <div class="dot" onclick="goToTestimonial(4)"></div>
+            <div class="dot" onclick="goToTestimonial(5)"></div>
+            <div class="dot" onclick="goToTestimonial(6)"></div>
+            <div class="dot" onclick="goToTestimonial(7)"></div>
         </div>
 
     </section>
@@ -2121,35 +2274,49 @@
 
         // Testimonial carousel
         let currentPage = 0;
-        const totalPages = 4; // 8 cards, 2 per page
+
+        function getCardsPerPage() {
+            return window.innerWidth <= 768 ? 1 : 2;
+        }
+
+        function getTotalPages() {
+            return Math.ceil(8 / getCardsPerPage());
+        }
 
         function showTestimonial(pageIndex) {
-            const track = document.getElementById('testimonialTrack');
-            const carousel = document.getElementById('testimonialCarousel');
-            const carouselWidth = carousel.offsetWidth;
-            const gap = 30;
-            // Each page scrolls by the full carousel width + gap
-            const offset = pageIndex * (carouselWidth + gap);
+            var track = document.getElementById('testimonialTrack');
+            var carousel = document.getElementById('testimonialCarousel');
+            var cardsPerPage = getCardsPerPage();
+            var totalPages = getTotalPages();
+
+            // Clamp page index
+            if (pageIndex >= totalPages) pageIndex = 0;
+            if (pageIndex < 0) pageIndex = totalPages - 1;
+            currentPage = pageIndex;
+
+            var carouselWidth = carousel.offsetWidth;
+            var gap = 30;
+            var offset = pageIndex * (carouselWidth + gap);
             track.style.transform = 'translateX(-' + offset + 'px)';
 
-            document.querySelectorAll('.dot').forEach(function(dot, i) {
+            // Update dots
+            var dots = document.querySelectorAll('.dot');
+            dots.forEach(function(dot, i) {
                 dot.classList.toggle('active', i === pageIndex);
+                dot.style.display = i < totalPages ? '' : 'none';
             });
         }
 
         function nextTestimonial() {
-            currentPage = (currentPage + 1) % totalPages;
-            showTestimonial(currentPage);
+            showTestimonial(currentPage + 1);
         }
 
         function previousTestimonial() {
-            currentPage = (currentPage - 1 + totalPages) % totalPages;
-            showTestimonial(currentPage);
+            showTestimonial(currentPage - 1);
         }
 
         function goToTestimonial(index) {
-            currentPage = index;
-            showTestimonial(currentPage);
+            showTestimonial(index);
         }
 
         // Recalculate on resize
@@ -2231,6 +2398,9 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        // Initialize carousel dots on load
+        showTestimonial(0);
     </script>
 </body>
 </html>
