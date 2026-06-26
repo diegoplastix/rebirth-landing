@@ -871,14 +871,14 @@
         /* Financing Section (Cherry) */
         .financing {
             background: var(--bg-cream);
-            padding: 120px 60px;
+            padding: 100px 24px;
             position: relative;
             overflow: hidden;
         }
 
         .financing-intro {
             max-width: 800px;
-            margin: 0 auto 60px;
+            margin: 0 auto 50px;
             text-align: center;
         }
 
@@ -908,20 +908,24 @@
             margin-bottom: 30px;
         }
 
+        /* Let Cherry's full-page widget use its native responsive layout: a wide
+           two-column (image + content) presentation on desktop that collapses to a
+           single stacked column on mobile. The container is sized to give the desktop
+           two-column layout room so it reads as a wide, intentional section. */
         .financing-widget {
-            max-width: 940px;
+            max-width: 1100px;
             margin: 0 auto;
             background: var(--white);
             border-top: 3px solid var(--gold);
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 12px 40px rgba(44, 36, 32, 0.08);
-            padding: 24px;
+            padding: 12px;
             overflow: hidden;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .financing {
-                padding: 60px 20px;
+                padding: 60px 16px;
             }
 
             .financing-heading {
@@ -930,15 +934,11 @@
             }
 
             .financing-widget {
-                padding: 12px;
+                padding: 6px 8px 14px;
             }
         }
 
         @media (max-width: 480px) {
-            .financing {
-                padding: 40px 16px;
-            }
-
             .financing-heading {
                 font-size: 32px;
                 line-height: 36px;
@@ -1828,6 +1828,7 @@
                 <!-- <a href="#services">Services</a> -->
                 <a href="#treatments">Treatments</a>
                 <!-- <a href="#shop">Shop</a> -->
+                <a href="#financing">Financing</a>
                 <a href="#about">About Us</a>
             </nav>
         </div>
@@ -2170,7 +2171,7 @@
                         fontFamily: 'Roboto',
                         headerFontFamily: 'Roboto',
                     }
-                }, ['hero', 'calculator', 'howitworks', 'faq']);
+                }, ['hero', 'calculator']);
             </script>
             <div id="all"></div>
             <div id="hero"></div>
